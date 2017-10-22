@@ -46,10 +46,7 @@ var str = "  ";
 ### #1.
 input : 4
 
-output<pre>*
-**
-***
-****</pre>
+output<pre>*\n**\n***\n****\n</pre>
 My solution
 <pre><code>var input = parseInt(prompt('몇 줄을 출력하시겠습니까?'));
 var str = "";
