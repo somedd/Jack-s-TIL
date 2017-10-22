@@ -4,15 +4,17 @@ DAY2
 ----------
 # TIL
 ## "parseInt"의 두가지 용도
- 1. 문자열을 정수로 바꿀 때
- 2. 소수점을 정수로만 표현할 때
+<pre> 
+1. 문자열을 정수로 바꿀 때
+2. 소수점을 정수로만 표현할 때
+</pre>
 ## 논리 연산자
- &&(AND), ||(OR), !(NOT), ===(equal)
+<pre>&&(AND), ||(OR), !(NOT), ===(equal)</pre>
 
-##<pre><code>console.log("%s, %d, name, n")</code></pre>
- *%s = string, %d = 10진수
+##<code>console.log("%s, %d, name, n")</code>
+<pre>%s = string, %d = 10진수</pre>
 ## MEM구조
- 1. CODE : 실행코드가 들어간다.:
+ 1. CODE : 실행코드가 들어간다.
  2. DATA : "Hello", 전역변수와 같은 값이 들어가 있음.
  3. HEAP : 객체, 배열이 들어가는 곳. Ex) var a = {1, 2, 3}
  4. STACK : 함수 안에서 만든 변수가 쌓이는 곳.
