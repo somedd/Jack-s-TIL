@@ -108,3 +108,23 @@ output
  *******
 ~~~~~~
 My solution
+~~~~~~~~~~~~~~~
+var input = parseInt(prompt('몇 줄을 출력하시겠습니까?'));
+var str = '';
+for (var i = 0; i < input; i++) {
+  for (var j = (input - 1); j >= 0; j--) {
+    if (i >= j) {
+      str = str + '*';
+    } else {
+      str = str + ' ';
+    }
+  }
+  for (var k = 1; k < input; k++) {
+    if (i >= k) {
+      str = str + '*';
+    }
+  }
+  str = str + '\n';
+}
+console.log(str);
+~~~~~~~~~~~~~~~
