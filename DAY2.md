@@ -8,9 +8,6 @@ DAY2
 2. 소수점을 정수로만 표현할 때</pre>
 ## 논리 연산자
 <pre>&&(AND), ||(OR), !(NOT), ===(equal)</pre>
-
-##<code>console.log("%s, %d, name, n")</code>
-<pre>%s = string, %d = 10진수</pre>
 ## MEM구조
 <pre> 1. CODE : 실행코드가 들어간다.
  2. DATA : "Hello", 전역변수와 같은 값이 들어가 있음.
@@ -20,5 +17,26 @@ DAY2
 <pre> 1. javascript에서만 배열을 객체라고 정의함.
  2. 배열을 string으로 바꾸는 methods : a.join();
  3. 배열은 참조(reference)라서 한번 복사하면 계속 영향을 받는다.</pre>
-# CODING
+# CODING 
+## 달력만들기
+<pre>#1<code>console.log("월 화 수 목 금 토 일");
+var x;
+for (var i = 1; i < 25; i++) {
+console.log("%d  %d  %d  %d  %d  %d  %d", i, i+1, i+2, i+3, i+4, i+5, i+6);
+    i = i+6;
+    if (i === 28) {
+      console.log("%d  %d  %d", i+1, i+2, i+3);
+    }
+  }
+</code></pre>
+<pre>#2.spring 이용<code>console.log("  월 화 수 목 금 토 일");
+var x = "";
+var str = "  ";
+  for(var i = 1; i < 32; i++) {
+    if (i % 7 === 0) {
+      x = x + str + i + "\n"; 
+    } else {
+      x = x + str + i; 
+    }
+  }</code></pre>
 
