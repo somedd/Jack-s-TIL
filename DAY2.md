@@ -47,6 +47,7 @@ var str = "  ";
 ## 별찍기
 ### #1.
 input : 4
+
 output
 ~~~~~~
 *
@@ -72,6 +73,7 @@ console.log(str);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ### #2.
 input : 4
+
 output
 ~~~~~~
    *
@@ -79,4 +81,30 @@ output
  ***
 ****
 ~~~~~~
+My solution
+~~~~~~~~~~~~~~~~~
+var input = parseInt(prompt('몇 줄을 출력하시겠습니까?'));
+var str = '';
+for (var i = 0; i < input; i++) {
+  for (var j = (input - 1); j >= 0; j--) {
+    if (i >= j) {
+      str = str + '*';
+    } else {
+      str = str + ' ';
+    }
+  }
+  str = str + '\n';
+}
+console.log(str);
+~~~~~~~~~~~~~~~~~
+### #3.
+input 4
 
+output
+~~~~~~
+    *
+   ***
+  *****
+ *******
+~~~~~~
+My solution
