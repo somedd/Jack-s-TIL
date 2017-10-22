@@ -54,4 +54,17 @@ for (var i = 1; i < input; i++) {
 }
 console.log(str);
 ~~~~~~~~~~~
+### #5.
+input : 4
+
+output
+~~~~~~
+****
+*  *
+*  *
+****
+~~~~~~
+My solution
+~~~~~~~~~~~
+~~~~~~~~~~~
 
