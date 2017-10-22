@@ -17,8 +17,8 @@ DAY2
 <pre> 1. javascript에서만 배열을 객체라고 정의함.
  2. 배열을 string으로 바꾸는 methods : a.join();
  3. 배열은 참조(reference)라서 한번 복사하면 계속 영향을 받는다.</pre>
-# CODING 
-## 달력만들기
+# My Coding 
+## Making a calender
 ### #1.
 <pre><code>console.log("월 화 수 목 금 토 일");
 var x;
@@ -42,3 +42,12 @@ var str = "  ";
     }
   }</code></pre>
 
+## 별찍기
+### #1. input : 4 
+###     output
+<pre>*
+**
+***
+****</pre>
+                             
+			     
