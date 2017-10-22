@@ -46,10 +46,24 @@ var str = "  ";
 ### #1.
 input : 4
 
-output
-<pre>*
+output<pre>*
 **
 ***
-****</pre>
-                             
-		     
+****
+</pre>
+My solution
+<pre><code>
+var input = parseInt(prompt('몇 줄을 출력하시겠습니까?'));
+var str = "";
+for (var i = 0; i < input; i++) {
+  for (var j = 0; j < input; j++) {
+    if (i >= j) {
+      str = str + "*";
+    } else {
+      str = str + " ";
+    }
+  }
+  str = str + "\n";
+}
+console.log(str);
+</code></pre>
