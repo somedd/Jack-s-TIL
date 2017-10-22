@@ -43,8 +43,9 @@ var str = "  ";
   }</code></pre>
 
 ## 별찍기
-### #1. input : 4 
-###     output
+### #1.
+input : 4 
+output
 <pre>*
 **
 ***
