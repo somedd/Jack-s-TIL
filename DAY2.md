@@ -19,8 +19,9 @@ DAY2
  3. 배열은 참조(reference)라서 한번 복사하면 계속 영향을 받는다.</pre>
 # My Coding 
 ## Making a calender
-### #1.
-<pre><code>console.log("월 화 수 목 금 토 일");
+My solution
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+console.log("월 화 수 목 금 토 일");
 var x;
 for (var i = 1; i < 25; i++) {
 console.log("%d  %d  %d  %d  %d  %d  %d", i, i+1, i+2, i+3, i+4, i+5, i+6);
@@ -29,9 +30,10 @@ console.log("%d  %d  %d  %d  %d  %d  %d", i, i+1, i+2, i+3, i+4, i+5, i+6);
       console.log("%d  %d  %d", i+1, i+2, i+3);
     }
   }
-</code></pre>
-### #2. spring 이용
-<pre><code>console.log("  월 화 수 목 금 토 일");
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*spring이용
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+console.log("  월 화 수 목 금 토 일");
 var x = "";
 var str = "  ";
   for(var i = 1; i < 32; i++) {
@@ -40,8 +42,8 @@ var str = "  ";
     } else {
       x = x + str + i; 
     }
-  }</code></pre>
-
+  }
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## 별찍기
 ### #1.
 input : 4
