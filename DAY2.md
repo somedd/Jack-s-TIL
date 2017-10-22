@@ -19,7 +19,8 @@ DAY2
  3. 배열은 참조(reference)라서 한번 복사하면 계속 영향을 받는다.</pre>
 # CODING 
 ## 달력만들기
-<pre>#1<code>console.log("월 화 수 목 금 토 일");
+### #1.
+<pre><code>console.log("월 화 수 목 금 토 일");
 var x;
 for (var i = 1; i < 25; i++) {
 console.log("%d  %d  %d  %d  %d  %d  %d", i, i+1, i+2, i+3, i+4, i+5, i+6);
@@ -29,7 +30,8 @@ console.log("%d  %d  %d  %d  %d  %d  %d", i, i+1, i+2, i+3, i+4, i+5, i+6);
     }
   }
 </code></pre>
-<pre>#2.spring 이용<code>console.log("  월 화 수 목 금 토 일");
+### #2. spring 이
+<pre><code>consol용e.log("  월 화 수 목 금 토 일");
 var x = "";
 var str = "  ";
   for(var i = 1; i < 32; i++) {
