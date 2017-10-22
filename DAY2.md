@@ -30,8 +30,8 @@ console.log("%d  %d  %d  %d  %d  %d  %d", i, i+1, i+2, i+3, i+4, i+5, i+6);
     }
   }
 </code></pre>
-### #2. spring 이
-<pre><code>consol용e.log("  월 화 수 목 금 토 일");
+### #2. spring 이용
+<pre><code>console.log("  월 화 수 목 금 토 일");
 var x = "";
 var str = "  ";
   for(var i = 1; i < 32; i++) {
