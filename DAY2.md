@@ -44,11 +44,12 @@ var str = "  ";
 
 ## 별찍기
 ### #1.
-input : 4 
+input : 4
+
 output
 <pre>*
 **
 ***
 ****</pre>
                              
-			     
+		     
