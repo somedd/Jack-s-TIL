@@ -70,6 +70,7 @@ myShift(arr1);
 console.log(arr1);
 ~~~~~~~~~~~~~~~~
   #3-2. unshift();
+
 *1. i--;
 ~~~~~~~~~~~~~~~~~~~~javascript
 var myUnshift = function(array, data) {
