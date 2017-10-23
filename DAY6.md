@@ -28,6 +28,7 @@ a[a.length - 1]
    *문자열은 바꾸는게 안되니 불가능
 9. 2차원 배열 : 배열에다가 배열을 push한 것.
 10. foreach(), map(), reduce() *중요
+11. concat(); : 배열 합치기. Ex) [1, 2].concat([3, 4, 5]);
 ~~~~~~~~~~~~~~~~
 ### Coding Tip
 ~~~~~~~~~~~~~~~~
@@ -53,4 +54,61 @@ Array.prototype.append = function(data) {
 }
 a.append(4);
 ~~~~~~~~~~~~~~
-
+### #2. pop(); 구현하기.
+arr.length를 하나 줄여서 구현
+### #3. shift();, unshift(); 구현하기.
+  #3-1. shift();
+~~~~~~~~~~~~~~~~javascript
+var myShift = function(array) {
+  for(i = 0; i < array.length - 1; i++) {
+     array[i] = array[i + 1];
+  }
+   array.length--;
+}
+var arr1 = [1, 2, 3, 4, 5];
+myShift(arr1);
+console.log(arr1);
+~~~~~~~~~~~~~~~~
+  #3-2. unshift();
+*1. i--;
+~~~~~~~~~~~~~~~~~~~~javascript
+var myUnshift = function(array, data) {
+  for(i = array.length - 1; i >= 0; i--) {
+     array[i + 1] = array[i];
+  i = 0;
+  array[i] = data;
+}
+var arr1 = [1, 2, 3, 4, 5];
+myUnshift(arr1, 7);
+console.log(arr1);
+~~~~~~~~~~~~~~~~~~~~
+*2. i++;
+~~~~~~~~~~~~~~~~~~~~javascript
+var myUnshift = function(array, data) {
+  for(i = 0; i < array.length; i++) {
+     array[array.length - i] = array[(array.length - i) - 1];
+  }
+  i = 0;
+  array[i] = data;
+}
+var arr1 = [1, 2, 3, 4, 5];
+myUnshift(arr1, 7);
+console.log(arr1);
+~~~~~~~~~~~~~~~~~~~~
+*3. temp 이용
+~~~~~~~~~~~~~~~~~~~~javascript
+var myUnshift = function(arr, v) {
+var temp = [];
+for(i = 0; i < arr.length; i++) {
+temp[i] = arr[i];
+}
+v = arr.length;
+for(i = 0; i < n; i++) {
+arr[i +  1] = temp[i];
+}
+arr[0] = v;
+}
+~~~~~~~~~~~~~~~~~~~~
+### #4. 무작위 짝코딩 멤버를 추천해 주는 프로그램을 짜보자. 홀수일 경우는 어떻게 해야할지도 생각해 보자.
+~~~~~~~~~~~~~~~~~~~javascript
+~~~~~~~~~~~~~~~~~~~
