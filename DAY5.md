@@ -3,7 +3,7 @@ DAY5
 2017/10/20
 ----------
 # TIL
-##UNIX 명령어 배우기
+## UNIX 명령어 배우기
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 1. GUI(graphic user interface)
 2. kernal(알맹이, 운영체제의 핵심) <-> shell
@@ -26,7 +26,7 @@ DAY5
 (3) rm : 파일 삭제 *rm -rf dir : 강제삭제(위험)
 (4) pbcopy : 클립보드에 복사하기
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##Git & Github의 기초사용법
+## Git & Github의 기초사용법
 ### Git
 ~~~~~~~~~~~~~~~~~~~~~~~~
 1. Git은 vcs(형상관리시스템)이다.
@@ -55,3 +55,19 @@ $ git log --oneline --graph --decorate --all
 여기서 origin은 원격저장소를 말하는 것임.
 ~~~~~~~~~~~~~~~~~~~
 ~~~~~~~~~~~~~~~~~~~~~~~~
+#### 심화지식
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. git에서 commit만 객체(object)이다. 그 외에는 모두 참조(reference)이다.
+2. branch는 객체의 참조일 뿐이다. / branch = 객체의 참조, commit의 별명일 뿐임.
+3. HEAD = 가장 마지막 commit의 참조임 
+  *HEAD가 가리키고 있는 곳에서 객체를 새로 만드는 것이 commit이다. 즉 갱신임.
+4. tag는 그냥 참조다. 움직이지 않음.
+5. 작업하는 방식의 종류
+(1) git flow
+(2) github flow
+(3) gitlab flow
+6. merge는 두 개를 합쳐 새로운 commit을 만든다.
+   *rebase는 두 개의 차이점을 드러내서 대상에게 통채로 얹어버린다.
+7. 이해를 위한 사이트 : https://learngitbranching.js.org/
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
