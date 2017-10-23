@@ -112,4 +112,47 @@ arr[0] = v;
 ~~~~~~~~~~~~~~~~~~~~
 ### #4. 무작위 짝코딩 멤버를 추천해 주는 프로그램을 짜보자. 홀수일 경우는 어떻게 해야할지도 생각해 보자.
 ~~~~~~~~~~~~~~~~~~~javascript
+var mkNum = function (input) {
+  var x = Math.random();
+  x = x * input
+  x = x - x % 1;
+  return x;
+};
+var inputName = function (arr, v) {
+  for (var i = 0; i < v; i++) {
+    var name = prompt((i + 1) + '번째 멤버의 이름을 입력하세요.');
+    arr.push(name);
+  }
+}
+var mkPartner = function (arr1, arr2, v) {
+  for (i = v; i > 0; i--) {
+    var x = mkNum(i);
+    arr1.push(arr2[x]);
+    arr2.splice(x, 1);
+  }
+};
+var printPartner = function (arr, v) {
+  console.log('*짝코딩 멤버입니다.*');
+  for (i = 0; i < v; i = i + 2) {
+    console.log('- %s와 %s는 짝입니다.', arr[i], arr[i + 1]);
+  }
+}
+var num = parseInt(prompt('총 몇 명인지 입력하세요.'));
+var member = [];
+inputName(member, num);
+var final = [];
+if (num % 2 == 0) {
+  mkPartner(final, member, num);
+  printPartner(final, num);
+} else {
+  var y = mkNum(num);
+  var solo = [];
+  solo.push(member[y]);
+  member.splice(y, 1);
+  num = num - 1;
+  mkPartner(final, member, num);
+  printPartner(final, num);
+  console.log('- %s는 혼자서 해야됩니다.', solo[0]);
+}
 ~~~~~~~~~~~~~~~~~~~
+
