@@ -33,4 +33,24 @@ a[a.length - 1]
 ~~~~~~~~~~~~~~~~
 arguments(parameter, 매개변수, 인자, 인수)는 건드리지 말자!
 ~~~~~~~~~~~~~~~~
-### 
+# My Coding
+## 연습문제
+### #1. 배열의 마지막에 원소를 추가하는 함수append(array, data) 구현하기.
+*function 이용
+~~~~~~~~~~~~~~~javascript
+var append = function(array, data) {
+  array[array.length] = data;
+}
+var arr1 = [1, 2, 3];
+append(arr1, 4);
+console.log(arr1);
+~~~~~~~~~~~~~~~
+*배열의 method로 만들기
+~~~~~~~~~~~~~~javascript
+var a = [1, 2, 3];
+Array.prototype.append = function(data) {
+  this[this.length] = data;
+}
+a.append(4);
+~~~~~~~~~~~~~~
+
