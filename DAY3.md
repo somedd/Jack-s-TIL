@@ -197,3 +197,127 @@ for (var i = 0; i <= input; i++) {
 }
 console.log(str);
 ~~~~~~~~~~~~
+## 러시안 룰렛 구현.
+1. RUle
+(1) 1/6확률로 죽는다.
+(2) 6번째 사람은 죽는다.
+2. My Solution
+  *1.
+~~~~~~~~~~~~~~~~javascript
+var mknum = function () {
+  var x = Math.random();
+  x = x * 6
+  x = x - x % 1 + 1;
+  return x;
+}
+var inputName = function(n) {
+  var name = prompt("사용자" + n + "의 이름을 입력해 주세요.");
+  return name;
+}
+var shot = function(player) {
+  
+}
+var num = mknum();
+var p1 = inputName(1);
+var p2 = inputName(2);
+
+alert('Game Start! 장전완료. 확인을 누르면 시작합니다.');
+
+for (var i = 1; i <= 3; i++) {
+    if ( num == i) {
+      alert('PLAYER1 turn/죽었다.');
+      break;
+        } else {
+      alert('PLAYER1 turn/휴 살았다ㅠㅠ');
+        }
+    if ( num == i || i == 3) {
+      alert('PLAYER2 turn/죽었다.');
+      break;
+        } else {
+      alert('PLAYER2 turn/휴 살았다ㅠㅠ');
+        }
+  }
+
+alert("Game Over 게임 끝.")
+~~~~~~~~~~~~~~~~
+
+## 숫자찍기
+### #1.
+input: 2 10
+
+output
+~~~~~~~~~~~~~~~~~~~
+2 3 4 5 6 7 8 9 10
+~~~~~~~~~~~~~~~~~~~
+My Solution
+~~~~~~~~~~~~~~~~~~~javascript
+var first = parseInt(prompt("시작할 수를 입력해주세요."));
+var last = parseInt(prompt("마지막 수를 입력해주세요."));
+
+if (first > last) {
+  alert("마지막 수가 시작할 수 보다 커야합니다. 다시 입력하세요.")
+  var first = parseInt(prompt("시작할 수를 입력해주세요."));
+  var last = parseInt(prompt("마지막 수를 입력해주세요."));
+}
+str = "";
+str = str + first;
+for( i = 1; i <= last - first; i++) {
+  str = str + " " + (first + i);
+}
+console.log(str);
+~~~~~~~~~~~~~~~~~~~
+
+### #2.
+input: 4
+
+output
+~~~~~~~~~~~~~~~
+1 2 3 4
+5 6 7 8
+9 10 11 12
+13 14 15 16
+~~~~~~~~~~~~~~~
+My Solution
+~~~~~~~~~~~~~~~javascript
+var input = parseInt(prompt('수를 입력하세요.'));
+str = '';
+for (var i = 1; i <= input; i++) {
+  for (var j = 1; j <= input; j++) {
+    if( i == 1) {
+      str = str + ' ' + j;
+    } else {
+            str = str + ' ' + (input *(i - 1) + j);
+    }
+  }
+  str = str + '\n';
+}
+console.log(str);
+~~~~~~~~~~~~~~~
+### #3.
+input: 4 2
+
+output
+~~~~~~~~~~~~
+1 3 5 7
+3 5 7 9
+5 7 9 11
+7 9 11 13
+~~~~~~~~~~~~
+My Solution
+~~~~~~~~~~~~~javascript
+var bynum = parseInt(prompt('x by x 수를 입력하세요.'));
+var gapnum = parseInt(prompt('간격 수를 입력하세요.'));
+str = '';
+for (var i = 1; i <= bynum; i++) {
+  for (var j = 1; j <= bynum * gapnum; j = j + gapnum) {
+    if (i == 1) {
+      str = str + ' ' + j;
+    } else {
+      str = str + ' ' + (gapnum * (i - 1) + j);
+    }
+  }
+  str = str + '\n';
+}
+console.log(str);
+~~~~~~~~~~~~~
+
