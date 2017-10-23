@@ -20,7 +20,7 @@ DAY2
 # My Coding 
 ## Making a calender
 My solution
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~javascript
 console.log("월 화 수 목 금 토 일");
 var x;
 for (var i = 1; i < 25; i++) {
@@ -32,7 +32,7 @@ console.log("%d  %d  %d  %d  %d  %d  %d", i, i+1, i+2, i+3, i+4, i+5, i+6);
   }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *spring이용
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~javascript
 console.log("  월 화 수 목 금 토 일");
 var x = "";
 var str = "  ";
@@ -56,7 +56,7 @@ output
 ****
 ~~~~~~
 My solution
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~javascript
 var input = parseInt(prompt('몇 줄을 출력하시겠습니까?'));
 var str = "";
 for (var i = 0; i < input; i++) {
@@ -82,7 +82,7 @@ output
 ****
 ~~~~~~
 My solution
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~javascript
 var input = parseInt(prompt('몇 줄을 출력하시겠습니까?'));
 var str = '';
 for (var i = 0; i < input; i++) {
@@ -108,7 +108,7 @@ output
  *******
 ~~~~~~
 My solution
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~javascript
 var input = parseInt(prompt('몇 줄을 출력하시겠습니까?'));
 var str = '';
 for (var i = 0; i < input; i++) {
@@ -128,3 +128,4 @@ for (var i = 0; i < input; i++) {
 }
 console.log(str);
 ~~~~~~~~~~~~~~~
+
