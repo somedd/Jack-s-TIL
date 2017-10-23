@@ -18,7 +18,7 @@ output
    *
 ~~~~~~~~
 My solution
-~~~~~~~~~~~
+~~~~~~~~~~~javascript
 var input = parseInt(prompt('몇 줄을 출력하시겠습니까?'));
 var str = '';
 for (var i = 0; i < input; i++) {
@@ -65,7 +65,7 @@ output
 ****
 ~~~~~~
 My solution
-~~~~~~~~~~~
+~~~~~~~~~~~javascript
 var input = parseInt(prompt('몇 줄을 출력하시겠습니까?'));
 var str = '';
 for (var i = 0; i < input; i++) {
@@ -96,7 +96,7 @@ output
    *
 ~~~~~~
 My soluion
-~~~~~~~~~~
+~~~~~~~~~~javascript
 var input = parseInt(prompt('몇 줄을 출력하시겠습니까?'));
 var str = '';
 for (var i = 0; i < input; i++) {
@@ -136,5 +136,64 @@ for (var i = 1; i < input; i++) {
 }
 console.log(str);
 ~~~~~~~~~~
+### #7.
+input : 3 
 
+output
+~~~~~~~~
+*******
+ *   *
+  * *
+  * *
+ *   *
+*******
+~~~~~~~~
+My solution
+~~~~~~~~~~~~javascript
+var input = parseInt(prompt('몇 줄을 출력하시겠습니까?'));
+var str = '';
+for (var i = 0; i < input; i++) {
+  for (var j = 0; j < input + 1; j++) {
+    if (i == 0) {
+      str = str + '*';
+    } else if (i == j) {
+      str = str + '*';
+    } else {
+      str = str + ' ';
+    }
+  }
+  for (var j = input - 1; j >= 0; j--) {
+    if(i == 0) {
+      str = str + '*';
+    } else if (i == j) {
+      str = str + '*';
+    } else {
+      str = str + ' ';
+  }
+  }
+  str = str + '\n';
+}
+for (var i = 0; i <= input; i++) {
+  for(var j = input; j >= 0; j--) {
+    if(i == 3) {
+      str = str + '*';
+    } else if (i == j) {
+      str = str + '*';
+    } else {
+      str = str + ' ';
+  }
+  }
 
+  for(var j = 1; j < input + 1; j++) {
+    if(i == 3) {
+      str = str + '*';
+    } else if (i == j) {
+      str = str + '*';
+    } else {
+      str = str + ' ';
+  }
+  }
+    str = str + '\n';
+}
+console.log(str);
+~~~~~~~~~~~~
