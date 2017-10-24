@@ -247,7 +247,7 @@ var mySwap = function (arr, idx1, idx2) {         //#4-3. 위치바꾸는 함수
   arr[idx1] = arr[idx2];
   arr[idx2] = temp;
   return arr;
-};순
+};
 var mySort = function (arr) {                     //#4-4. 오름차순으로 정렬하는 함수(버블정렬)
   var tempArr = 0;
   var n = arr.length;
