@@ -10,9 +10,10 @@ DAY7
 
 ### 동기(Sync)와 비동기(Async)
 1. 동기 : 하나의 이벤트를 다 할 때까지 아무것도 못한다.
+   
    *cpu : 빠른 작업이기 때문에 동기로 처리한다.
 
-Code (text.txt를 읽어서 그대로 출력)
+- Code (text.txt를 읽어서 그대로 출력)
 ~~~~~~~~~~javascript
 var fs = require('fs'); //fs객체를 변수fs에 넣어주세요. fs = file sysyem.
 var foo = function(err, data) {
@@ -27,10 +28,12 @@ fs.readFile('test.txt','utf8', foo); //객체인 함수를 매개변수로 사�
 console.log("hahaha"); //javascript는 비동기이기 때문에 hahaha를 먼저 출력한다.
 ~~~~~~~~~~
 2. 비동기 : 하나의 이벤트를 시키고 다른 것도 할 수 있다.
+
    *javascript는 모두 비동기이다. 즉, 오래걸리는 일은 무조건 비동기로 처리한다.
+
    *Network(internet), file : 시간이 걸리므로 비동기로 처리한다.
 
-Code (text.2.txt의 값을 읽어서 값들의 합을 출력)
+- Code (text.2.txt의 값을 읽어서 값들의 합을 출력)
 ~~~~~~~~~~~~~javascript
 var fs = require('fs');
 var data = fs.readFileSync('test2.txt', 'utf8');
