@@ -121,3 +121,176 @@ Human.prototype.eat = function (target) {
 ### 7. 객체와 참조
 - 객체도 마찬가지로 참조 변수에 할당된다.
 
+# My Coding
+## 연습문제#1.  같은 객체 타입 2개 구현하기.
+- My solution
+~~~~~~~~~~javascript
+var m1 = {
+  name : "Honux",
+  hp : 100,
+  mp : 50,
+  power : 10,
+  attack : function(target) {
+  target.hp -= this.power;
+  },
+  eat : function(target) {
+    this.hp += target.energy;
+  }
+}
+var m2 = {
+  name : "Jack",
+  hp : 200,
+  mp : 10,
+  power : 5,
+  attack : function(target) {
+  target.hp -= this.power;
+  },
+  eat : function(target) {
+    this.hp += target.energy;
+  }
+}
+~~~~~~~~~~
+## 연습문제#2.
+1. food(name, energy) 생성자를 만들어 봅시다.
+2. eat()메소드를 human에 추가해 봅시다.
+3. 커피와 도너츠 객체를 생성해서 크롱에게 먹여봅시다.
+- My solution
+~~~~~~~~~~~~~javascript
+function Food(name, energy) {      //#2-1.
+  this.name = name;
+  this.energy = energy;
+};
+function Human(name, hp, mp, power) {
+  this.name = name;
+  this.hp = hp;
+  this.mp = mp;
+  this.power = power;
+  this.attack = function (target) {
+    target.hp -= this.power;
+  };
+  this.show = function () {
+    console.log('%s의 상태입니다. Hp : %d / MP :  %d / Power : %d', this.name, this.hp, this.mp, this.power);
+  };
+  this.eat = function (target) {   //#2-2.
+    this.hp += target.energy;
+    console.log("%s이 %s를 먹었습니다.",this.name,  target.name);
+  };
+};
+var h1 = new Human("honux", 100, 20, 10);
+var h2 = new Human("crong", 999, 1, 99);
+var f1 = new Food("coffee", 10);
+var f2 = new Food("doughnut", 20);
+
+h2.eat(f1);                        //#2-3.
+h2.show();
+h2.eat(f2);
+h2.show();
+~~~~~~~~~~~~~
+## 연습문제#3. h1 객체의 모든 속성과 값을 출력해봅시다.
+~~~~~~~~~~~~~~~javascript
+function Human(name, hp, mp, power) {
+  this.name = name;
+  this.hp = hp;
+  this.mp = mp;
+  this.power = power;
+  };
+function Food(name, energy) {
+  this.name = name;
+  this.energy = energy;
+};
+Human.prototype.eat = function (target) {
+    this.hp += target.energy;
+    };
+var h1 = new Human("jack", 100, 100, 10);
+var f1 = new Food("coffee", 100);
+h1.eat(f1);
+var keys = Object.keys(h1);
+for (var i = 0; i < keys.length; i++) {
+  var key = keys[i];
+  console.log(key + " : " + h1[key]);
+}
+~~~~~~~~~~~~~~~
+
+## 연습문제#4.
+1. 배열을 만들고 1-100까지의 임의의 정수를 20개 넣습니다.
+2. 배열에서 최대값과 최소값을 뽑는 함수 myMin(), myMax() 구현
+3. 배열의 주어진 위치의 원소를 교체하는 mySwap(); 구현
+4. 이 배열을 정렬합니다.
+5. array.sort();를 사용해서 오름차순 내림차순 정렬
+6. 2진 검색을 구현
+- My solution
+~~~~~~~~~~~~~~~~~javascript
+var generateNum = function () {                   //#4-1. 난수생성
+  return Math.floor(Math.random() * 100 + 1);
+};
+var myMin = function (arr) {                      //#4-2. 최소값, 최대값 구하는 함수
+  var min = arr[0];
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+  }
+  return min;
+};
+var myMax = function (arr) {
+  var max = arr[0];
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  return max;
+}
+var mySwap = function (arr, idx1, idx2) {         //#4-3. 위치바꾸는 함수
+  var temp;
+  temp = arr[idx1];
+  arr[idx1] = arr[idx2];
+  arr[idx2] = temp;
+  return arr;
+};순
+var mySort = function (arr) {                     //#4-4. 오름차순으로 정렬하는 함수(버블정렬)
+  var tempArr = 0;
+  var n = arr.length;
+  for (var j = 0; j < n; j++) {
+    for (var i = n; i >= 0; i--) {
+      if (arr[i] > arr[i + 1]) {
+        mySwap(arr, i, i + 1);
+      }
+    }
+  }
+  return arr;
+};
+/*mainArr.sort(function(a, b){                    //#4-5. *return a -b;는 오름차
+  return b - a;
+});*/
+var myBinarySearch = function (arr, num) {        //#4-5. 2진탐색하는 함수
+  var low = 0;
+  var high = arr.length - 1;
+  for (i = 0; i < arr.length; i++) {
+    var mid = (low + high) / 2;
+    var temp = arr[mid];
+    if (temp == num) {
+      return mid;
+    } else if (temp > num) {
+      high = mid - 1;
+    } else {
+      low = mid + 1;
+    }
+  }
+  return 0;
+};
+var mainArr = [];
+for (var i = 0; i < 20; i++) {
+  var a = generateNum();
+  mainArr[i] = a;
+}
+mainArr = mySort(mainArr);
+var num = prompt('찾고자 하는 숫자를 입력하세요.');
+if (myBinarySearch(mainArr, num) == 0) {
+  console.log(mainArr);
+  console.log('찾고자 하는 숫자가 없습니다.');
+} else {
+  console.log(mainArr);
+  console.log('찾고자 하는 숫자가 %d번째에 있습니다.', myBinarySearch(mainArr, num))
+}
+~~~~~~~~~~~~~~~~~
