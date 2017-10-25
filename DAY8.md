@@ -1,8 +1,156 @@
-DAY8
-====
-2017/10/25
-----------
-# TIL
-## #1.
-## My Coding
-## #2.
+# DAY8
+
+## 2017/10/25
+
+# My Coding
+
+## 숫자찍기 (이어서)
+
+### #4.
+
+input : 4
+
+output
+
+```
+1 2 3 4
+8 7 6 5
+9 10 11 12
+16 15 14 13
+```
+
+My solution
+
+```javascript
+var input = parseInt(prompt('수를 입력하세요.'));
+str = '';
+for (var i = 1; i <= input; i++) {
+  if (i == 1) {
+    for (var j = 1; j <= input; j++) {
+      str = str + ' ' + j;
+    }
+  } else if (i % 2 == 0) {
+    for (var k = input; k > 0; k--) {
+      str = str + ' ' + ((input * (i - 1)) + k);
+    }
+  } else {
+    for (var l = 1; l <= input; l++) {
+      str = str + ' ' + ((input * (i - 1)) + l);
+    }
+  }
+  str = str + '\n';
+}
+console.log(str);
+```
+
+### #5.
+
+input : 4
+
+output
+
+```
+1
+1 2
+1 2 3
+1 2 3 4
+```
+
+My solution
+
+```javascript
+var input = parseInt(prompt('수를 입력하세요.'));
+str = '';
+for (var i = 1; i <= input; i++) {
+    for (var j = 1; j <= input; j++) {
+      if(i >= j) {
+        str = str + ' ' + j;
+      } else {
+        str = str + ' ';
+      }
+    }
+      str = str + '\n';
+  }
+console.log(str);
+```
+
+### #6.
+
+input : 5
+
+output
+
+```
+5 0
+4 1
+3 2
+2 3
+1 4
+0 5
+```
+
+My solution
+
+```javascript
+var input = parseInt(prompt('수를 입력하세요.'));
+str = '';
+for (var i = input; i > 0; i--) {
+    for (var j = 0; j < 1; j++) {
+      str += i + ' ' + (input - i)
+    }
+      str = str + '\n';
+  }
+console.log(str);
+```
+
+### #7.도전과제
+
+input : 4
+
+output
+
+```
+1 2 3 4
+12 13 14 5
+11 16 15 6
+10 9 8 7
+```
+
+My solution
+
+  *배열생성 할 때 0으로 채우고, 값을 채우는 함수, 오른쪽으로 도는 함수 구현해서 다시하기
+
+```javascript
+var generateArr = function(num) {
+  var myArr = new Array(num);
+  for (var i = 0; i < num; i++) {
+    myArr[i] = new Array(num);
+  }
+  return myArr;
+};
+var input = 4;
+var mainArr = generateArr(input)
+for (var i = 1; i < input + 1; i++) { //->로이동
+  mainArr[0][i - 1] = i;
+}
+for (var i = 1; i < input; i++) {
+  mainArr[i][3] = mainArr[0][3] + i;
+}
+for (var i = 1; i < input; i++) {
+  mainArr[3][(input - 1) - i] = mainArr[3][3] + i;
+}
+for (var i = 1; i < input - 1; i++) {
+  mainArr[(input - 1) - i][0] = mainArr[3][0] + i;
+}
+for (var i = 1; i < input - 1; i++) {
+  mainArr[1][i] = mainArr[1][0] + i;
+}
+for (var i = 1; i < input - 2; i++) {
+  mainArr[(input - 1) - i][2] = mainArr[1][2] + i;
+}
+for (var i = 1; i < input - 2; i++) {
+  mainArr[2][i] = mainArr[2][2] + i;
+}
+var str = mainArr.join("\n");
+console.log(str);
+```
