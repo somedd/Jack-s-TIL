@@ -9,7 +9,9 @@
 - 객체를 배열처럼 처리하는 이유
 
   ```javascript
-  var h = { name : "해나", status : "잠못잠", money : 9999999};
+  var h = { name : "해나",
+  status : "잠못잠",
+  money : 9999999};
   h.money -= 5000;
   var x = prompt("어떤 속성을 바꿀래요?");
   var y = prompt("어떤 값으로 바꿀래요?");
@@ -27,7 +29,12 @@
 - 배열로 사용하면 idx로 처리되기 때문에 사용하면 안된다.
 
   ```javascript
-  var h = { name : "해나", status : "잠못잠", money : 9999999, age : 23, pc : 5, pet : ['에비츄', '스누피', '가필드'],
+  var h = { name : "해나",
+            status : "잠못잠",
+            money : 9999999,
+            age : 23,
+            pc : 5,
+            pet : ['에비츄', '스누피', '가필드'],
             work : function(money) {
               this.money += money;
             }};
