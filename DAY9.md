@@ -191,3 +191,22 @@ while(조건) {
 1. 숫자게임을 개량해 봅시다.
 2. w3c html과 css를 공부해 봅시다.
 3. 간단한 웹 페이지를 골라서 비슷하게 만들어 봅시다.
+- My solution
+  ```html
+  <!DOCTYPE html>
+  <html lang="jack">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
+
+  <body style = "background-color:Linen">
+    <h1>숫자 맞추기 게임!</h1>
+      <img src="http://codesquad.kr/img/company/codesquad2.png" width = 200>
+      <p style="color:Blue " id = 'test'><strong>1 ~ 100까지의 숫자가 생성됩니다. 맞춰보세요!</strong></p>
+      <p style ="border:2px solid tomato;"><strong><script src = "test2.js"></strong></script></p>
+  </body>
+  </html>
+  ```
