@@ -91,12 +91,37 @@ while(조건) {
   }
   ```
 
-  ## #4\. html
+## #4\. HTML
+### 1. 태그
+- ```<h1> </h1>``` : 헤드를 표시
+- ```<p> </p>``` :내용을 표시
+### 2. Semantic Web과 HTML5
+- 태그별 각각의 요소들이 의미를 갖고 있다.
+### 3. DOM(Document Object Model)
+- 문서를 객체를 이용해서 트리구조로 표현한다.(조작한다.)
 
+  -즉, 최상위 계층은 html, 그밑에 태그 등등이 들어간다.
+- 브라우져의 엔진으로 웹상에 구현한다. (Ex)Gecko, Webkit)
+
+  -DOM을 WEB에 뿌리는 것이 엔진!
+### 4. 엘리먼트(Element)
+- 여는 태그와 닫는 태그로 이루어진다.
+- 태그 사이에 콘텐츠를 갖고, 태그 안에 속성과 속성의 값을 갖는다.
+- 단일 태그에 콘텐츠가 없을경우 ```<tag /```처럼 표현하지만, 그냥 여는 태그만 가질 수 있다. (img, br)
+- 블록 엘리먼트 : p, h1, div처럼 줄이 바뀌는 엘리먼트
+- 인라인 엘리먼트 : span, img, input, button, a(하이퍼링크)처럼 줄바뀜이 없는 엘리먼트.
+### 5. 속성(Attributes)
+- 아래에서는 2가지의 속성을 갖는 것임. (href, title)
+
+  ```html
+  <a href="http://codesquad.kr" title="코드스쿼드">
+  ```
+### 6. HTML 객체
+- window : 최상위 객체
+- document : DOM의 최상위 객체
 # My Coding
 
-## #1\. for in
-
+# #1\. for...in
 1. 객체 h의 키와 값을 출력해보자.
 2. 객체 h의 숫자 객체의 합을 출력해 보자.
 
@@ -135,3 +160,34 @@ while(조건) {
   }
   console.log(sum);
   ```
+# #2\. 연습문제#1
+
+- 1~100사이 임의의 숫자를 생성하고 맞추는 게임 구현하기
+- My solution
+
+  ```javascript
+  var generateNum = function() {
+  return (Math.floor(Math.random() * 100 + 1));
+  };
+  var num = generateNum();
+  i = 1;
+  console.log(num);
+  while (num !== isNum) {
+  var isNum = parseInt(prompt("숫자를 입력하세요!"));
+  if (num == isNum) {
+    document.write("정답입니다! 시도한 횟수 : " + i);
+    break;
+  } else if (num > isNum) {
+    document.write("입력하신 숫자보다 큰 숫자랍니다.<br>")
+  } else if(num < isNum) {
+    document.write("입력하신 숫자보다 작은 숫자랍니다.<br>")
+  }
+  i++;
+  }
+  ```
+
+# #2\. 연습문제#2
+
+1. 숫자게임을 개량해 봅시다.
+2. w3c html과 css를 공부해 봅시다.
+3. 간단한 웹 페이지를 골라서 비슷하게 만들어 봅시다.
