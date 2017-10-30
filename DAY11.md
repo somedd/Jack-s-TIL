@@ -56,6 +56,10 @@
   - 시그니처 : 함수의 이름, 매개변수, 리턴 타입
 ### 7. 디폴트(default)
   - 함수 내에서 기본값
+## #2. Canvas
+## #3. 콜백(Callback) 함수
+## #4. 애로우 함수
+
 # My Coding
 ## #1.연습문제
   1. 배열의 첫번째 원소와 마지막 원소의 순서를 바꾸는 함수를 구현해 봅시다.
@@ -84,3 +88,137 @@
     console.log("===========")
     printkkd(5);
     ```
+## #2.canvas활용
+0. 체스판 만들기
+    - My solution
+      ```javascript
+      for(i = 0; i < 8; i++) {
+      if (i % 2 === 0) {
+          for(j = 0; j < 8; j = j + 2) {
+            ctx.fillStyle = "black"
+        ctx.fillRect(80 * j, 60 * i, 80, 60);
+      }
+        for(j = 1; j <  8;j = j + 2) {
+                  ctx.fillStyle = "white"
+        ctx.fillRect(80 * j, 60 * i, 80, 60);
+        }
+      } else {
+              for(j = 1; j < 8; j = j + 2) {
+       ctx.fillStyle = "white"
+        ctx.fillRect(80 * j, 60 * i, 80, 60);
+      }
+           for(j = 1; j < 8; j = j + 2) {
+       ctx.fillStyle = "black"
+        ctx.fillRect(80 * j, 60 * i, 80, 60);
+      }
+      }
+      }
+      ```
+1. 로봇 그리기
+    - My solution
+      ```javascript
+      ctx.strokeStyle = "black";
+      ctx.strokeRect(280, 100, 80 , 60)
+      ctx.strokeRect(290, 110, 20 , 15)
+      ctx.strokeRect(330, 110, 20 , 15)
+      ctx.strokeRect(300, 140, 40 , 15)
+      ctx.beginPath();
+      ctx.moveTo(320, 160);
+      ctx.lineTo(320, 260);
+      ctx.moveTo(240, 180);
+      ctx.lineTo(400, 180);
+      ctx.moveTo(320, 260);
+      ctx.lineTo(260, 330);
+      ctx.moveTo(320, 260);
+      ctx.lineTo(380, 330);
+      ctx.stroke();
+      ```
+2. 라이언 그리기
+    - My solution
+        ```javascript
+      var bgImage = new Image();
+      bgImage.onload = function () {
+        ctx.drawImage(bgImage, 20, 20);
+      };
+      bgImage.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr3-KMhBbHMcaWYpKdRpcaLSqIsCohg3dSNvsQnhd5-B5cIP2-Dg";
+      ctx.beginPath();
+      ctx.fillStyle = "GoldenRod"
+      ctx.lineWidth = 4;
+      ctx.arc(320, 180, 60, 0, 2*Math.PI,false)
+      ctx.fill();
+      ctx.stroke();
+      //얼굴모양
+
+      ctx.beginPath();
+      ctx.moveTo(280, 160);
+      ctx.lineTo(310, 160);
+      ctx.fill();
+      ctx.stroke();
+      //왼쪽눈썹
+
+      ctx.beginPath();
+      ctx.moveTo(330, 160);
+      ctx.lineTo(360, 160);
+      ctx.fill();
+      ctx.stroke();
+      //오른쪽눈썹
+
+      ctx.beginPath();
+      ctx.moveTo(295,175);
+      ctx.arc(295, 175, 2, 0,2*Math.PI,false)
+      ctx.fill();
+      ctx.stroke();
+      //왼쪽 눈
+
+      ctx.beginPath();
+      ctx.moveTo(345, 175);
+      ctx.arc(345, 175, 2, 0,2*Math.PI,false);
+      ctx.fill();
+      ctx.stroke();
+      //오른쪽 눈
+
+      ctx.beginPath();
+      ctx.moveTo(320, 190);
+      ctx.arc(320, 190, 2, 0,2*Math.PI,false);
+      ctx.fill();
+      ctx.stroke();
+      //코
+
+      ctx.beginPath();
+      ctx.fillStyle = "White"
+      ctx.moveTo(310, 190);
+      ctx.lineTo(330, 190);
+      ctx.fill();
+      ctx.stroke();
+      //코밑 1자
+
+      ctx.beginPath();
+      ctx.moveTo(320, 200);
+      ctx.arc(310,200,10,0,3/2*Math.PI,false);
+      ctx.fill();
+      ctx.stroke();
+      //코밑 왼쪽 원
+
+      ctx.beginPath();
+      ctx.moveTo(320, 200);
+      ctx.arc(330,200,10,Math.PI,3/2*Math.PI,true);
+      ctx.fill();
+      ctx.stroke();
+      //코밑 오른쪽 원
+
+      ctx.beginPath();
+      ctx.fillStyle = "GoldenRod";
+      ctx.moveTo(365,140);
+      ctx.arc(350, 130, 15, Math.PI/5, Math.PI*(8/7),true);
+      ctx.fill();
+      ctx.stroke();
+      //오른쪽 귀
+
+      ctx.beginPath();
+      ctx.moveTo(300,127);
+      ctx.arc(285, 130, 15, Math.PI*(23/12),Math.PI*(5/7) ,true);
+      ctx.fill();
+      ctx.stroke();
+      //왼쪽 귀
+
+        ```
