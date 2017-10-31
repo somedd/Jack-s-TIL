@@ -1,0 +1,14 @@
+# DAY12
+## 2017/10/31
+# TIL
+## #1. DOM과 JQuery의 기초
+  ### (1). DOM(Document Object Model)
+  - HTML과 XML의 프로그래밍 인터페이스
+  - HTML을 계층구조로 표현한 것.
+  ### (2). ul(li목록),li(list item)
+
+## #2. 서버 개념
+  - 숫자 4byte로 구성된 주소체계  : ipv4 최근에는 ipv6
+  - URL(WWW.NAVER.COM) -> IP로 바꾸는 것이 DNS(Domain Name Server)
+  - WAS(Web Application Server) :  spring, node, ror, django, php
+  - was는 db로부터 서비스를 해주는데, 그 db의 종류가 oracle, mysql,mssql
