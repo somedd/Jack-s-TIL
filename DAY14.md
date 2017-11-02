@@ -58,5 +58,64 @@
     };
     countDown2(10);
     ```
+  - 점화식 : 재귀나 다이나믹 프로그래밍으로 문제를 풀 때, 유용하게 사용할 수 있다.
+  - **도전과제 : 재귀로 하노이 타워를 애니메이션까지 구현해 봅시다.**
 
+## #3\. 애니메이션(animation)
+  ### 1. setInterval(function, time), clearinterval(tid);
+  ### 2. 공튕기기 구현하기.
+  
 # My Coding
+  ## #1. 재귀 연습문제
+  ### #1-1. a부터 b까지 정수를 더해서 리턴해주는 재귀함수를 구현하기.
+  - My solution
+    ```javascript
+    var rsum = function(a, b) {
+      if (a == b) {
+          return a;
+      }
+      return b + rsum(a, b - 1);
+    };
+    var x = rsum(1, 10);
+    console.log(x);
+    ```
+  ### #1-2. 팩토리얼을 재귀함수로 구현하기.
+  - My solution ver1.
+    ```javascript
+    var fact = function(n) {
+      if (n == 1) {
+        return 1;
+      }
+      return n * fact(n - 1);
+    };
+    console.log(fact(3));
+    ```
+  - My solution ver2.
+    ```javascript
+    var str = "";
+    var fact = function(n) {
+    if (n == 1) {
+       str += 1;
+       return 1;
+    }
+    str += n + " * ";
+    console.log(str);
+    return n * fact(n - 1);
+    };
+    var x = fact(5);
+    console.log("%s = %d", str, x);
+    ```
+  ### #1-3. 피보나치 수열을 재귀함수로 구현하기.
+  - My solution
+    ```javascript
+    var fibo = function(n) {
+        if (n == 0) {
+          return 0;
+        } else if (n == 1) {
+          return 1;
+        } else {
+          return fibo(n - 1) + fibo(n - 2);
+        }
+    };
+    console.log(fibo(6));
+    ```
