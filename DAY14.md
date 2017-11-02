@@ -64,7 +64,7 @@
 ## #3\. 애니메이션(animation)
   ### 1. setInterval(function, time), clearinterval(tid);
   ### 2. 공튕기기 구현하기.
-  
+
 # My Coding
   ## #1. 재귀 연습문제
   ### #1-1. a부터 b까지 정수를 더해서 리턴해주는 재귀함수를 구현하기.
@@ -119,3 +119,81 @@
     };
     console.log(fibo(6));
     ```
+## #1. 공튕기기 구현하기
+- My solution(html)
+  ```html
+    <!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Making a animation</h1>
+    <canvas id="canvas" width="640" height="480"></canvas>
+    <p>!!!</p>
+      <script src="canvas.js"> </script>
+  </body>
+  </html>
+  ```
+- javascript
+  ```javascript
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+  var bgImage = new Image();
+  var bgload = false;
+  bgImage.onload = function () {
+    bgload = true;
+  };
+  var drawBackground = function() {
+    ctx.drawImage(bgImage, 0, 0);
+  };
+  bgImage.src = "https://i.pinimg.com/originals/ff/c8/25/ffc8251edd0360cfd4341e6341bb9124.jpg";
+  var drawBackground = function() {
+    ctx.drawImage(bgImage, 0, 0);
+  };
+  var ball = {
+    x: 50,
+    y: 50,
+    dx: 0,
+    dy: 0,
+    radius: 20,
+    color: "red",
+    move: function() {
+      this.x += this.dx;
+      this.y += this.dy;
+    },
+    setSpeed: function(x, y) {
+      this.dx = x;
+      this.dy = y;
+    },
+    check: function() {
+      if (this.x < this.radius || this.x > 640 - this.radius) {
+        this.dx *= (-1.1);
+      }
+      if (this.y < this.radius || this.y > 480 - this.radius) {
+        this.dy *= (-1.1);
+      }
+    }
+  };
+  ctx.drawBall = function() {
+    this.beginPath();
+    this.fillStyle = ball.color;
+    this.ellipse(ball.x, ball.y, ball.radius, ball.radius,0, 0, 2 * Math.PI);
+    this.fill();
+  };
+  ball.setSpeed(5, -1);
+  var drawAll = function() {
+    if (bgload) {
+      drawBackground();
+    }
+    ball.check();
+    ball.move();
+    ctx.drawBall();
+  };
+  var x = setInterval(drawAll, 30);
+  ```
+- css
+  ```css
+    h1 {
+    color : green
+  }
+  ```
