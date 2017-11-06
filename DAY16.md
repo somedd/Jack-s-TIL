@@ -228,32 +228,32 @@
         <div id='hint'> hint </div>
         <canvas id="drawHm" width="200" height="200"></canvas> <br />
 
-        <button id="btn1" onclick="pushChar(1)" value='a' )>a</button>
-        <button id="btn2" onclick="pushChar(2)" value='b'>b</button>
-        <button id="btn3" onclick="pushChar(3)" value='c'>c</button>
-        <button id="btn4" onclick="pushChar(4)" value='d'>d</button>
-        <button id="btn5" onclick="pushChar(5)" value='e'>e</button>
-        <button id="btn6" onclick="pushChar(6)" value='f'>f</button>
-        <button id="btn7" onclick="pushChar(7)" value='g'>g</button> <br/>
-        <button id="btn8" onclick="pushChar(8)" value='h'>h</button>
-        <button id="btn9" onclick="pushChar(9)" value='i'>i</button>
-        <button id="btn10" onclick="pushChar(10)" value='j'>j</button>
-        <button id="btn11" onclick="pushChar(11)" value='k'>k</button>
-        <button id="btn12" onclick="pushChar(12)" value='l'>l</button>
-        <button id="btn13" onclick="pushChar(13)" value='m'>m</button>
-        <button id="btn14" onclick="pushChar(14)" value='n'>n</button> <br />
-        <button id="btn15" onclick="pushChar(15)" value='o'>o</button>
-        <button id="btn16" onclick="pushChar(16)" value='p'>p</button>
-        <button id="btn17" onclick="pushChar(17)" value='q'>q</button>
-        <button id="btn18" onclick="pushChar(18)" value='r'>r</button>
-        <button id="btn19" onclick="pushChar(19)" value='s'>s</button>
-        <button id="btn20" onclick="pushChar(20)" value='t'>t</button>
-        <button id="btn21" onclick="pushChar(21)" value='u'>u</button> <br />
-        <button id="btn22" onclick="pushChar(22)" value='v'>v</button>
-        <button id="btn23" onclick="pushChar(23)" value='w'>w</button>
-        <button id="btn24" onclick="pushChar(24)" value='x'>x</button>
-        <button id="btn25" onclick="pushChar(25)" value='y'>y</button>
-        <button id="btn26" onclick="pushChar(26)" value='z'>z</button>
+        <button id="btn1" onclick="pushChar(1)" value='a' )>A</button>
+        <button id="btn2" onclick="pushChar(2)" value='b'>B</button>
+        <button id="btn3" onclick="pushChar(3)" value='c'>C</button>
+        <button id="btn4" onclick="pushChar(4)" value='d'>D</button>
+        <button id="btn5" onclick="pushChar(5)" value='e'>E</button>
+        <button id="btn6" onclick="pushChar(6)" value='f'>F</button>
+        <button id="btn7" onclick="pushChar(7)" value='g'>G</button> <br/>
+        <button id="btn8" onclick="pushChar(8)" value='h'>H</button>
+        <button id="btn9" onclick="pushChar(9)" value='i'>I</button>
+        <button id="btn10" onclick="pushChar(10)" value='j'>J</button>
+        <button id="btn11" onclick="pushChar(11)" value='k'>K</button>
+        <button id="btn12" onclick="pushChar(12)" value='l'>L</button>
+        <button id="btn13" onclick="pushChar(13)" value='m'>M</button>
+        <button id="btn14" onclick="pushChar(14)" value='n'>N</button> <br />
+        <button id="btn15" onclick="pushChar(15)" value='o'>O</button>
+        <button id="btn16" onclick="pushChar(16)" value='p'>P</button>
+        <button id="btn17" onclick="pushChar(17)" value='q'>Q</button>
+        <button id="btn18" onclick="pushChar(18)" value='r'>R</button>
+        <button id="btn19" onclick="pushChar(19)" value='s'>S</button>
+        <button id="btn20" onclick="pushChar(20)" value='t'>T</button>
+        <button id="btn21" onclick="pushChar(21)" value='u'>U</button> <br />
+        <button id="btn22" onclick="pushChar(22)" value='v'>V</button>
+        <button id="btn23" onclick="pushChar(23)" value='w'>W</button>
+        <button id="btn24" onclick="pushChar(24)" value='x'>X</button>
+        <button id="btn25" onclick="pushChar(25)" value='y'>Y</button>
+        <button id="btn26" onclick="pushChar(26)" value='z'>Z</button>
       </div>
       <script src="./mkHangman.js">
       </script>
@@ -264,7 +264,33 @@
   - css
     ```css
     h1 {
-      color : green
+      color: green;
     }
 
+    p {
+      color: orange;
+      font-size: 20px;
+    }
+
+    #hint {
+      color: red;
+      font-size: 30px;
+    }
+
+    #life {
+      color: blue;
+      font-size: 30px;
+    }
+
+    #display {
+      font-size: 40px;
+    }
+
+    button {
+      font-family: verdana;
+      text-align: center;
+      font-size: 20px;
+      width: 2em;
+      height: 2em;
+    }
     ```
