@@ -69,7 +69,7 @@
 
   - 리스트 : 크기가 가변적이다.(확장/축소 가능)
     - 크기가 가변적이다.(확장& 축소가 가능하다.)
-    - 구현하기
+    - 리스트 구현하기
       ```javascript
       var Node = function(v) {
         this.value = v;
@@ -85,6 +85,177 @@
       console.log(head);
       // head = {v : 1, next : {v : 3, next : null}};
       ```
-
+    - addLast 구현하기
+      ```javascript
+      var Node = function(v) {
+        this.value = v;
+        this.next = null;
+      };
+      var head = new Node(1);
+      Node.prototype.append = function(v) {
+        var n = new Node(v);
+        n.next = this.next;
+        this.next = n;
+      };
+      Node.prototype.addLast = function(v) {
+        var curr = this.next;
+        while(curr.next != null) {
+          curr = curr.next;
+        }
+        curr.append(v);
+      };
+      head.append(2); //1 - 2
+      head.append(3); //1 - 3 - 2
+      head.append(5); // 1 - 5 - 3 - 2
+      head.addLast(4); //
+      console.log(head);
+      ```
 
 # My Coding
+## Making a 15 puzzle
+  - My solution
+  ```javascript
+        //display moves start
+        var moves = 0;
+        var textMoves;
+        textMoves = document.getElementById('textMoves');
+        textMoves.innerHTML = moves;
+        //display moves end
+        //variables start
+        var n_00, n_01, n_02, n_03,
+            n_10, n_11, n_12, n_13,
+            n_20, n_21, n_22, n_23,
+            n_30, n_31, n_32, n_33;
+        var nArray = [[n_00, n_01, n_02, n_03],
+                      [n_10, n_11, n_12, n_13],
+                      [n_20, n_21, n_22, n_23],
+                      [n_30, n_31, n_32, n_33]];
+        var numArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,0];
+        var colum = 4;
+        //varatibales end
+        //tile start
+        function mkTile() {
+          for (var i = 0; i < 4; i++) {
+            for (var j = 0; j < 4; j++) {
+              nArray[i][j] = document.getElementById("n" + i + j);
+              (function(m,n) {
+              nArray[i][j].onclick = function() {
+                clickTile(m, n);
+              };
+            })(i,j);
+            }
+          }
+        }
+
+        function shuffleTile() {
+          var idx = 0;
+          // numArray.sort(function(a, b) {
+          //   return 0.5 - Math.random();
+          // });
+          for (var i = 0; i < 4; i++) {
+            for (var j = 0; j < 4; j++) {
+              nArray[i][j].innerHTML = numArray[idx];
+              idx++;
+            }
+          }
+        }
+        function showTile() {
+          for (var i = 0; i < 4; i++) {
+            for (var j = 0; j < 4; j++) {
+              nArray[i][j] = document.getElementById("n" + i + j);
+            }
+          }
+        }
+        function clickTile(x1, y1) {
+            console.log(x1,y1);
+            console.log(nArray[x1][y1]);
+            console.log(nArray);
+            if (x1 > 0 && nArray[x1 - 1][y1].innerHTML === '0') {  //up
+            tileSwap(nArray, x1, y1, x1 - 1, y1);
+            return true;
+          } else if ( y1 > 0 && nArray[x1][y1 - 1].innerHTML === '0') { //left
+            tileSwap(nArray, x1, y1, x1, y1 - 1);
+            return true;
+          } else if (y1 < 3 && nArray[x1][y1 + 1].innerHTML === '0') { //right
+            tileSwap(nArray, x1, y1, x1, y1 + 1);
+            return true;
+          } else if (x1 < 3 && nArray[x1 + 1][y1].innerHTML === '0') { //down
+            tileSwap(nArray, x1, y1, x1 + 1, y1);
+            return true;
+          } else {
+            return false;
+          }
+        }
+        function tileSwap(arr, x1, y1, x2, y2) {
+          // var temp;
+          // temp = arr[x1][y1];
+          // arr[x1][y1] = arr[x2][y2];
+          // arr[x2][y2] = temp;
+          var temp;
+          temp = arr[x1][y1].innerHTML;
+          arr[x1][y1].innerHTML = arr[x2][y2].innerHTML;
+          arr[x2][y2].innerHTML = temp;
+        }
+        //tile end
+        // function arrayMove(arr, x1, y1, position) {
+        //   if(position === "left" && y1 > 0) {
+        //     arraySwap(arr, x1, y1, x1, y1 - 1);
+        //     return true;
+        //   } else if(position === "right" && y1 < 3) {
+        //     arraySwap(arr, x1, y1, x1, y1 + 1);
+        //     return true;
+        //   } else if(position === "up" && x1 > 0) {
+        //     arraySwap(arr, x1, y1, x1 - 1, y1);
+        //     return true;
+        //   } else if(position === "down" && x1 < 3) {
+        //     arraySwap(arr, x1, y1, x1 + 1, y1);
+        //     return true;
+        //   } else {
+        //     return false;
+        //   }
+        // }
+        //main start
+        mkTile();
+        shuffleTile();
+
+  ```
+  ```html
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8"> <link rel="stylesheet" href="./mkNumPuzzle.css">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta http-equiv="X-UA-Compatible" content="ie=edge">
+          <title>Making a puzzle</title>
+        </head>
+        <body>
+          <div id = "puzzle">
+
+            <div><span id = "n00"></span><span id = "n01"></span><span id = "n02"></span><span id = "n03"></span></div>
+            <div><span id = "n10"></span><span id = "n11"></span><span id = "n12"></span><span id = "n13"></span></div>
+            <div><span id = "n20"></span><span id = "n21"></span><span id = "n22"></span><span id = "n23"></span></div>
+            <div><span id = "n30"></span><span id = "n31"></span><span id = "n32"></span><span id = "n33"></span></div>
+
+            <div id = "textMoves">  </div>
+          </div>
+          <script src="mkNumPuzzle.js"> </script>
+        </body>
+        </html>
+    ```
+    ```css
+    span {
+      background-color: white;
+      display : inline-block;
+      color : orange;
+      font-family: verdana;
+      text-align: center;
+      font-size: 20px;
+      width : 40px;
+      height: 40px;
+      border: 1px solid #222;
+    }
+    body {
+      background-color : green;
+    }
+
+  ```
