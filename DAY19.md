@@ -128,12 +128,40 @@
 ## 연습문제#5.
   - x 주변의 값 찾기 : 4*4배열에 1부터 15까지 숫자와 x가 들어있을 때, x주변의 숫자를 return!
     ```javascript
+    var arr = [[1,2,3,4],[5,6,7,8],['x',9,10,11],[12,13,14,15]];
+    var findNum = function(val, arr) {
+      for (var i = 0; i < 4; i++) {
+        for (var j = 0; j < 4; j++) {
+          if (val === arr[i][j]) {
+            console.log("찾는 값 : " + val + "이 있습니다!");
+            if (!!arr[i - 1][j]) { //위
+              console.log("찾으려는 원소의 위 값 : " + arr[i - 1][j]);
+            }
+            if (!!arr[i][j - 1]) { //왼쪽
+              console.log("찾으려는 원소의 왼쪽 값 : " + arr[i][j - 1]);
+            }
+            if (!!arr[i][j + 1]) { //오른쪽
+              console.log("찾으려는 원소의 오른쪽 값 : " + arr[i][j + 1]);
+            }
+            if (!!arr[i + 1][j]) { //아래
+              console.log("찾으려는 원소의 아래 값 : " + arr[i + 1][j]);
+            }
+            return;
+          }
+        }
+      }
+      console.log("찾는 값이 없습니다.");
+    };
+    console.log(arr);
+    findNum('x',arr);
     ```
 ## 숫자퍼즐 구현하기.
   1. html + js 만들기
   ```html
-  <div id = "puzzle"><span id = "n00"><\span> <span id = "n01"><\span> <\div>
-    <div><span id "n10"> <\span> <\div>
+  <div id = "puzzle">
+    <div><span id = "n00"> .....<\span> <span id = "n01"><\span> <\div>
+    <div><span id "n10">...... <\span> <\div>
+  <\div>
   ```
   2. css로 span을 적당히 키워줍니다.
   3. js구현하기
