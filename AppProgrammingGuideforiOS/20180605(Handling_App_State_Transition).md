@@ -10,7 +10,7 @@
 
 > 예를 들어, foreground -> background로 갈때 you might write out any unsaved data and stop any ongoing tasks.
 
-### What to Do at Launch Time.
+### 1. What to Do at Launch Time.
 -  app delegate’s `application:willFinishLaunchingWithOptions:` and `application:didFinishLaunchingWithOptions:` methods to do the following:
 	- Check the contents of the launch options dictionary for information about why the app was launched, and respond appropriately.
 	- Initialize your app’s critical data structures.
@@ -33,7 +33,7 @@ Prepare your app’s window and views for display:
 * not running > active, background > foreground(active), active상태로 가기전에 짧게 inactive state를 거친다.
 
 
-## What to Do When Your App Is Interrupted Temporarily
+## 2. What to Do When Your App Is Interrupted Temporarily
 - applicationWillResignActive에서 구현해줄것
 	- Save data and any relevant state information.
 	- Stop timers and other periodic tasks.
@@ -47,9 +47,9 @@ Prepare your app’s window and views for display:
 ### Responding to Temporary Interruptions
 - 예: 전화왔을 때 대응할 메서드가 어딘지
 
-## What to Do When Your App Enters the Foreground
+## 3. What to Do When Your App Enters the Foreground
 - applicationWillEnterForeground:
 - applicationDidBecomeActive:
 
-## What to Do When Your App Enters the Background
+## 4. What to Do When Your App Enters the Background
 - foreground > background 갈 때 applicationDidEnterBackground: 사용
