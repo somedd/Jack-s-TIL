@@ -16,7 +16,7 @@
 - IPA 앱 Bundle 구조와 관련성
   - 앱 번들 내부 Resources 디렉토리에 위치
   - 컴파일된 결과가 저장됨 예) CustomCell.xibc
-  - 실제로는 뷰 객체가 **아카이브**(`Archived`) 되어 있음
+  - 실제로는 뷰 객체가 **아카이브**(**Archived**) 되어 있음
   - 실행시점에 Unarchive해서 파일 소유자(File’s owner)에 연결
   - 인스턴스 변수에 아웃렛(IBOutlet) 연결
 
