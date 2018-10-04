@@ -73,3 +73,6 @@
     }
     ```
   - **TMI** : ``SearchTextField:UITextField = searchVC.searchBar.subviews.first?.subviews.last``가 TextField이고, leftView,rightView가 있었을 줄은 정말 몰랐다. rightViewMode까지.. 구현하고 나서 신기해서 놀랐던 코드
+
+### 참조
+- https://iosdevcenters.blogspot.com/2016/07/hacking-uisearchbar-in-swift.html
