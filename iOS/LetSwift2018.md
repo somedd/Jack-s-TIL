@@ -1,0 +1,247 @@
+# Let's Swift 2018
+
+### 2018/11/06
+
+## Keynote / 새로운 만남, 지식과 경험의 공유 (JK)
+
+- #### 개발자들끼리 같이 공감할 수 있는 자리를 만들고자 열게 됐음.
+
+- #### 워크샵을 준비한 계기
+
+  - Inspireed by WWDC Labs
+
+- #### Swift Open-Sources
+
+  - Swift 5
+    - 현재 Swift5 브랜치가 생성되어 진행되고 있음
+    - 주요 이슈: **ABI Stablility** , **Async/Await**
+  - Swift-NIO
+  - Swift Syntax
+  - Swfit LSP(Language Server Protocol)
+    - Xcode가 아닌 다른 개발 환경에서 작업이 가능해짐
+    - 즉, 커스텀 에디터에서 Swift 사용이 가능해지는 것.
+
+## 사이드 프로젝트로 앱스토어 1위 공략하기 (노수진 님)
+
+- #### 보안카드 위젯 앱
+
+- #### 앱 출시과정
+
+  - ##### 아이디어 단계
+
+    - 작고 재밌는 아이디어에서 시작하기
+    - 새 앱을 다운로드 하는 이유?
+      - 쓰고 있던 앱이 관리되지 않을 때
+      - 더 마음에 드는 앱을 발견했을 때
+      - 새 아이폰을 샀을 때
+    - 비즈니스 모델 정하기
+    - 앱 심사 받기
+      - 앱 심사보다는 앱 리젝 받는 것이 큰일임.
+        - Rejected : 앱 기능의 문제(심각한 크래시, 사용성 문제, 부적절한 API)
+          - 코드를 고쳐서 새로운 빌드 제출
+        - Metadata Rejected : 앱스토어 정보 문제
+          - AppStore Connect에서 정보수정 후 제출
+
+  - ##### 앱스토어 출시
+
+    - 출시 후, 각종 카페나 페이스북에 홍보를 하기 시작함.
+    - 그 후, 페이스북 유료광고로 시작했으나, 손해보는 장사였음.
+      - 하지만, 순위에 오르는 것이 더 좋은 마케팅이라고 생각해서 그대로 진행함.
+    - 네이버 검색 후, 블로거분들에게 코드를 뿌려주었음.
+
+  - ##### 초기 사용자 모집
+
+  - ##### 입소문을 타고 성장
+
+    - 유저들과 소통하기
+      - 페이스북 페이지를 만들었음. 이 페이지를 통해서, Support URL로 등록할 수 있고, 유저들과 소통할 수 있어서 좋았음.
+      - 이메일은 두가지로 가능함.
+        1. MFMailComposeViewController : 아이폰에 메일App계정이 연동되어 있어야 함.
+        2. MailCore2(라이브러리) : Email Protocol을 이용해 바로 보낼 수 있음.
+      - 업데이트 노트 관리
+        - 상세하게 작성해서 유저들이 이해하게끔 하려고 노력함.
+
+  - ##### 유지보수
+
+    - 필요 시, 긴급리뷰를 요청할 수 있음. 이유를 잘 설명해야된다.
+
+  - ##### 앱스토어 리뷰 관리하기
+
+    - 대기업의 앱들은 이미 안정된다고 유저들이 인식하나, 작은 앱은 그렇지 않음.
+    - Apptentive 활용
+    - 부정적인 경험을 가진 유저들이 바로 별점을 낮게 준다
+      - 그렇기 때문에, 별점요청이나 건의사항을 보내는 시점을 잘 맞추어야 함.
+      - AppStore에서 전체 리뷰 중 가장 비판 적인 순으로 보기 후, 너무 부적절하면 리포트 가능.
+
+## iOS 💖 Ruby (김은영 님)
+
+- #### iOS개발자에게 유용한 Ruby Gem들을 소개하고자 함.
+
+- #### Ruby와 Gem란 무엇일까?
+
+  - Ruby : 순수 객체지향 언어, 일본에서 활발하다.
+  - Gem : Ruby의 라이브러리로서 , cocoapods, Carthage도 RubyGem의 한종류
+    - Gem의 버전관리 : Bundler
+
+- #### iOS 개발이 편해지는 Gem (CI Tool에서 주로 사용할 수 있는)
+
+  - ##### 먼저, CI Tool이란?  Continuous Intergration
+
+    - Commit 단위로, 컴파일, 테스트, 디플로이를 실행시키는 툴
+
+  - ##### Tachikoma
+
+    - Github Repo내의 gem을 업데이트 해서, 해당 Repo에 PR까지 해주는 Gem
+    - 장점 : 라이브러리의 계속적인 관리가 가능하다.
+    - 단점 : 회사 사정상 유지보수가 안되고 있다.
+
+  - ##### Danger
+
+    - 버전 PR내 확인사항, Objc 코드, Storyboard 에러 체크
+    - 한줄 요약하자면, Code Review Bot!
+
+  - ##### Houston 
+
+    - Push Notification 편리하게 메세지등을 설정하고, Test를 할 수 있는 Gem
+
+  - ##### Tenma
+
+    - 릴리즈 준비의 자동화 툴. Mile Stone에 따른 dev, master 브런치 제작
+
+  - ##### Fastlane
+
+    -  App Store 업로드 및 심사 신청
+
+## TDSv2 a.k.a Toss Design System v2 (이택규 님)
+
+- #### TDS before v2
+
+  - ##### 초창기의 문제점과 이슈들을 설명하고자 함.
+
+    - iOS 앱개발에 필요한 다양한 디자인 컴포넌트등을 제공했음.
+      - 색상, 타이포그래피 등을 먼저 정해두기 시작함.
+    - TDS는 즉, 레고 블록이라고 생각하면 된다.
+    - TDS v1에서는 작은 단위의 디자인 컴포넌트를 준비했다면, v2에서는 이를 바탕으로, 코드로 옮기고자 했다.
+
+- #### TDS v2
+
+  - ##### 목표
+
+    - 토스 앱 전체 look & feel 통일
+    - 타 직군간 쉬운 커뮤니케이션
+    - 개발시간 단축, 편의성
+    - Feature 개발은 비즈니스 로직 구현에만 집중
+
+  - ##### View - View Model Pair
+
+    - Feature 개발은 비즈니스 로직 구현에만 집중.
+
+  - ##### View - View Model as Protocol
+
+    - 일반적인 View Model 구현체
+    - Subclassing
+    - Model이 직접 구현
+
+  - ##### Cell as base View
+
+    - UIView -> UICollectionViewCell -> TDS.BaseView
+    - 모든 TDS 컴포넌트는 UICollectionViewCell의 Subclass
+
+  - ##### List-Model Binding
+
+    - View Model Protocol + Layout Protocol (Cell alignment, Cell distribution)
+
+    - ```swift
+      protocol FlowSizable {
+      	var alignmentStrategy: FlowSizingStrategy { get }
+      	var distributionStrategy: FlowSizingStrategy { get }
+      }
+      ```
+
+    - 최소한의 Layout 속성과 Rx Binding을 통해 리스트 구성.
+
+  - ##### Event Emitter Protocol
+
+    - Cell Touch, Button, Switch, Swipe Action -> Auto-Binding
+    - 컴포넌트에서 발생하는 모든 이벤트를 Protocol-Base로 처리
+
+  - ##### External Pod
+
+    - 메인 프로젝트와 별도 모듈로 관리
+    - 컴파일 시간 단축
+    - 비즈니스 로직과 완전히 분리
+
+- #### 시행착오
+
+  - TDS를 사용하면 쉽고 빠르다.. 개발자만 빼고
+
+  - 개발의 효율 vs 디자이너의 창의성 간 Trade Off
+
+  - 비즈니스에 따라 구분되는 TDS 컴포넌트 여기서 좀 더 일반화 할 수 없을까?
+    - 각 화면의 요구사항에 따라 확장되는 TDS 컴포넌트 (WIP)
+
+- #### Wrap Up
+
+  - 아직 진행중인 프로젝트로..
+  - TODOs
+    - 전역 컴포넌트 사이즈 캐싱
+    - 코드 문서화
+    - 별도 앱 작성
+      - 바로바로 확인이 가능한 것은 개발자만 해당되기 떄문에 타 직군들에게 고민하기 위해서 별도 앱 작성
+
+## AI in iOS (이승윤 님)
+
+- 링크 
+  - https://github.com/motlabs/iOS-Proejcts-with-ML-Models/blob/master/README_kr.md
+  - https://docs.google.com/presentation/d/1wA_PAjllpLLcFPuZcERYbQlPe1Ipb-bzIZinZg3zXkg/edit#slide=id.g3ce91132f9_0_354
+  - https://somedd.github.io/TIL_MLiOSProgramming/
+  - [Feedback-20180615.pdf](iOS/Level3 Feedback/Feedback/Feedback-20180615.pdf)
+
+- ##### ML to Mobile
+
+  1. Deep Learning To Mobile
+
+  1. Machine Learning Framework To Mobile Framework
+
+- ##### CoreML
+
+  - SentimentCoreML + NSLinguisticTagger
+  - MobileNet + Vision Framework
+
+## Let's TDD (전수열 님)
+
+- ##### TDD를 하는 것보다 테스트를 작성하는 능력이 더 중요하다. 
+
+  - 따라서, Test를 어떻게 잘 작성할 수 있을까에 대해서 진행하고자 함.
+
+  - dummy, Mock, stub, spy 차이점
+
+- 향 후, 영상 업로드시 작성
+
+## RxRIBs, Multiplatform architecture with Rx (김남현 님)
+
+- 향 후, 영상 업로드시 작성
+
+## ReactorKit으로 RxSwift 시작하기 (김태준 님)
+
+- 향 후, 영상 업로드시 작성
+
+## ReSwift와 함께 Unidirectional Architecture (황재욱 님)
+
+- 향 후, 영상 업로드시 작성
+
+## RxSwift Internal (오진성 님)
+
+- 향 후, 영상 업로드시 작성
+
+## GraphQL over Rest API (이봉원 님)
+
+- 향 후, 영상 업로드시 작성
+
+## SIMD & MPS in Swift (양승현 님)
+
+- 향 후, 영상 업로드시 작성
+
+## Debugging With Xcode, LLDB and Chisel (안정민 님)
+
+- 향 후, 영상 업로드시 작성
